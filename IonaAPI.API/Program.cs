@@ -1,6 +1,13 @@
+using IonaAPI.Core.Interfaces;
+using IonaAPI.Infrastructure;
+using IonaAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddScoped<IAppService, AppService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

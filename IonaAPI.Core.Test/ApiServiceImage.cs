@@ -8,8 +8,6 @@ namespace IonaAPI.Core.Test
 {
     public class ApiServiceImageTest
     {
-       
-
         [Fact]
         public async Task ReturnImageFromCatApiIfItHasContainImage()
         {

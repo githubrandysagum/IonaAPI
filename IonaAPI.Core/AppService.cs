@@ -74,9 +74,9 @@ namespace IonaAPI.Services
             //If Cat list could not provide data for the page. Add dog data
             if (catList.ResultCount == 0)
             {
-                var toSkip = limit - (catList.PageCount % limit);
+                var toSkip = catList.PageCount == 0? 0 : limit - (catList.PageCount % limit);
                 var toSkipPage = (catList.PageCount / limit);
-                var toGetPage = (page - toSkipPage) - 1;
+                var toGetPage = page == 0? page : (page - toSkipPage) - 1;
 
                 //Add First part of dog data
                 list.AddRangeSkip(await dogQuery.ExecuteAsync(toGetPage, limit), toSkip);

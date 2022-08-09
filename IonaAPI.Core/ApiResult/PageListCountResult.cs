@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IonaAPI.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace IonaAPI.Core.ApiResult
 {
     public class PageListCountResult<T>
     {
+
         public PageListCountResult()
         {
 
@@ -16,6 +18,13 @@ namespace IonaAPI.Core.ApiResult
         {
             Page = page;
             Limit = limit;  
+        }
+
+        public PageListCountResult(int page, int limit, List<T> breeds) 
+        {
+            Page = page;
+            Limit = limit;
+            Results = breeds;
         }
 
         public int Page { get; set; }

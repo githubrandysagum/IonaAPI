@@ -1,7 +1,7 @@
 # IonaAPI
 A combined API of thecatapi.com and the thedogapi.com
 
-Prerequisite:
+## Prerequisite:
 Download and Install Dotnet sdk
 https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 

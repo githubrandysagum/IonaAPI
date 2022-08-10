@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -16,5 +17,4 @@
     <ProjectReference Include="..\IonaAPI.Core\IonaAPI.Core.csproj" />
     <ProjectReference Include="..\IonaAPI.Infrastructure\IonaAPI.Infrastructure.csproj" />
   </ItemGroup>
-
 </Project>

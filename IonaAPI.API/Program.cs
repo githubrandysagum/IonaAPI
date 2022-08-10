@@ -1,10 +1,19 @@
 using IonaAPI.Core.Interfaces;
+using IonaAPI.Extensions;
 using IonaAPI.Infrastructure;
 using IonaAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+    options.UseApiBehavior = true;
+});
+
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddScoped<IAppService, AppService>();
@@ -22,7 +31,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

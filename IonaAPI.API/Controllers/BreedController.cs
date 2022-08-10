@@ -9,6 +9,8 @@ using IonaAPI.Core.ApiResult;
 namespace IonaAPI.Controllers
 {
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/")]
     public class BreedsController : ControllerBase
     {
         private IAppService appService;
@@ -40,6 +42,7 @@ namespace IonaAPI.Controllers
 
         [HttpGet]
         [Route("list")]
+        [Route("Images")]
         public async Task<PageListResult<ImagesDto>> GetImagesAsync([FromQuery] int page, [FromQuery] int limit)
         {
             var result = await appService.GetImagesAsync(page, limit);
@@ -49,6 +52,7 @@ namespace IonaAPI.Controllers
 
         [HttpGet]
         [Route("Image/{id}")]
+        [Route("Images/{id}")]
         public async Task<ImageDto> GetImageByIdAsync(string id)
         {
             var result = await appService.GetImageByIdAsync(id);

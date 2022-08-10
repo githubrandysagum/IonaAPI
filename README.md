@@ -20,7 +20,7 @@ Zero is the first page.
 Limit is  greater than 0 and not greater than 100.
 
 
-### Endpoints:
+## Endpoints:
 #### /api/v1/Breeds
 Example
 Get: /api/v1/Breeds?page=0,limit=10.

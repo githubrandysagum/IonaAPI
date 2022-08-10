@@ -23,17 +23,16 @@ Limit is  greater than 0 and not greater than 100.
 #### /api/v1/Breeds
 Example
 Get: /api/v1/Breeds?page=0,limit=10.
-**Returns lists of Breeds.**
+
+
+**Returns:** Lists of Breeds.
 
 #### /api/v1/Breeds/id
 Example
 Get: /api/v1/Breeds/abys?page=0,limit=10.
 
 
-**Returns lists of images by breed.**
-
-
-
+**Returns:** Lists of images by breed.
 
 
 #### /api/v1/Images or /api/v1/list
@@ -41,9 +40,7 @@ Example
 Get: /api/v1/Breeds?page=0,limit=10.
 
 
-**Returns list of images.**
-
-
+**Returns:** List of images.**
 
 
 #### /api/v1/Images/id or /api/v1/Image/id
@@ -54,7 +51,7 @@ Get: /api/v1/Image/xyz
 
 
 
-**Returns the image by Id.**
+**Returns**: The image by Id.
 
 ### Test with swagger.
 Endpoints:

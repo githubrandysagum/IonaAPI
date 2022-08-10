@@ -28,7 +28,7 @@ Get: /api/v1/Breeds?page=0,limit=10
 #### /api/v1/Breeds/id
 Example
 Get: /api/v1/Breeds/abys?page=0,limit=10
-Returns lists of images by breed.
+**Returns lists of images by breed.**
 
 #### /api/v1/Images or /api/v1/list
 Example

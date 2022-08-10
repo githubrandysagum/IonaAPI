@@ -41,6 +41,10 @@ Example
 Get: /api/v1/Image/xyz
 Returns the image by Id.
 
+Test with swagger.
+Endpoints:
+/swagger
+
 
 
 

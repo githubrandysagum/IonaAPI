@@ -6,6 +6,9 @@ using IonaAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;
@@ -31,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseIonaExceptionHandler();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

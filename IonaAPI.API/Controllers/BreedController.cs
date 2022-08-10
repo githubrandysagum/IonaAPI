@@ -5,6 +5,7 @@ using IonaAPI.Dtos;
 using AutoMapper;
 using IonaAPI.Core.Interfaces;
 using IonaAPI.Core.ApiResult;
+using IonaAPI.API.Filters;
 
 namespace IonaAPI.Controllers
 {
@@ -24,6 +25,7 @@ namespace IonaAPI.Controllers
 
         [HttpGet]
         [Route("Breeds")]
+        [PageLimitValidationFilter]
         public async Task<PageListResult<BreedDto>> GetBreedsAsync([FromQuery] int page, [FromQuery] int limit)
         {
             var result = await appService.GetBreedsAsync(page, limit);
@@ -33,6 +35,7 @@ namespace IonaAPI.Controllers
 
         [HttpGet]
         [Route("Breeds/{id}")]
+        [PageLimitValidationFilter]
         public async Task<PageListResult<BreedImagesDto>> GetBreedByIdAsync(string id, [FromQuery] int page, [FromQuery] int limit)
         {
             var result = await appService.GetImagesByBreedIdAsync(id, page, limit);
@@ -43,6 +46,7 @@ namespace IonaAPI.Controllers
         [HttpGet]
         [Route("list")]
         [Route("Images")]
+        [PageLimitValidationFilter]
         public async Task<PageListResult<ImagesDto>> GetImagesAsync([FromQuery] int page, [FromQuery] int limit)
         {
             var result = await appService.GetImagesAsync(page, limit);

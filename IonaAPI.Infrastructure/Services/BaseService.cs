@@ -21,7 +21,7 @@ namespace IonaAPI.Infrastructure
 
         public virtual async Task<PageListCountResult<Breed>> GetBreedsAsync(int page = 0, int limit = 0)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/Breeds?page={page}&limit={limit}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?page={page}&limit={limit}&order=Asc");
             var response = await Client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
             var list = new PageListCountResult<Breed>(page, limit);
            
@@ -72,9 +72,7 @@ namespace IonaAPI.Infrastructure
 
         public async Task<PageListCountResult<BreedImages>> GetImagesByBreedIdAsync(string breedId, int page = 0, int limit = 10)
         {
-           
-
-            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?breed_ids={breedId}&page={page}&limit={limit}&order=ASC");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?breed_id={breedId}&page={page}&limit={limit}&order=Asc");
             var response = await Client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
 
             var list = new PageListCountResult<BreedImages>(page, limit);
@@ -106,7 +104,7 @@ namespace IonaAPI.Infrastructure
 
         public async Task<PageListCountResult<Images>> GetImagesAsync(int page = 0, int limit = 10)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?page={page}&limit={limit}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?page={page}&limit={limit}&order=Asc");
             var response = await Client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
 
             var list = new PageListCountResult<Images>(page, limit);

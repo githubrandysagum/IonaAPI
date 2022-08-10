@@ -19,6 +19,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 Zero is the first page.
 Limit is  greater than 0 and not greater than 100.
 
+
 ### Endpoints:
 #### /api/v1/Breeds
 Example
@@ -27,12 +28,19 @@ Get: /api/v1/Breeds?page=0,limit=10.
 
 **Returns:** Lists of Breeds.
 
+
+--------------------------------------------
+
+
 #### /api/v1/Breeds/id
 Example
 Get: /api/v1/Breeds/abys?page=0,limit=10.
 
 
 **Returns:** Lists of images by breed.
+
+
+--------------------------------------------
 
 
 #### /api/v1/Images or /api/v1/list
@@ -43,15 +51,19 @@ Get: /api/v1/Breeds?page=0,limit=10.
 **Returns:** List of images.**
 
 
+--------------------------------------------
+
+
 #### /api/v1/Images/id or /api/v1/Image/id
 Example
 Get: /api/v1/Image/xyz
 
 
-
-
-
 **Returns**: The image by Id.
+
+
+--------------------------------------------
+
 
 ### Test with swagger.
 Endpoints:

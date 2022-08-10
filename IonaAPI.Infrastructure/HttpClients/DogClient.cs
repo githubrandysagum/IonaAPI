@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace IonaAPI.Infrastructure.HttpClients
+﻿namespace IonaAPI.Infrastructure.HttpClients
 {
     public class DogClient
     {

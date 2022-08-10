@@ -35,7 +35,7 @@ namespace IonaAPI.Core.Test
         }
 
         [Fact]
-        public async Task ReturnListItemsWhenClientHasDataAsync()
+        public async Task Returns_ListItems_When_Client_Has_DataAsync()
         {
             var pageList = new PageListCountResult<Images>(0, 0, images);
 
@@ -52,7 +52,7 @@ namespace IonaAPI.Core.Test
         }
 
         [Fact]
-        public async Task ReturnCatOnlyWhenCatApiHasAllDataAsync()
+        public async Task Returns_Cat_Data_OnlyWhen_CatApi_Has_All_DataAsync()
         {
             var catList = new PageListCountResult<Images>(0, 1, images);
             var dogList = new PageListCountResult<Images>(0, 1, new List<Images>
@@ -76,7 +76,7 @@ namespace IonaAPI.Core.Test
         }
 
         [Fact]
-        public async Task ReturnsDogDataWhenCatHasNoData()
+        public async Task Returns_Dog_Data_When_Cat_Has_No_DataAsync()
         {
             var catList = new PageListCountResult<Images>(0, 1, new List<Images>());
             var dogList = new PageListCountResult<Images>(0, 1, new List<Images>
@@ -104,7 +104,7 @@ namespace IonaAPI.Core.Test
         }
 
         [Fact]
-        public async Task ReturnsCompleteDataWhenCatHasNoEnoughData()
+        public async Task Returns_Complete_Data_When_Cat_Has_No_Enough_DataAsync()
         {
             var catList = new PageListCountResult<Images>(0, 10, images);
             var dogList = new PageListCountResult<Images>(0, 10, new List<Images>

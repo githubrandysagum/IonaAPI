@@ -9,7 +9,7 @@ namespace IonaAPI.Core.Test
     public class ApiServiceImageTest
     {
         [Fact]
-        public async Task ReturnImageFromCatApiIfItHasContainImage()
+        public async Task Return_Image_From_CatApi_If_It_Has_the_Image()
         {
           
             var catService = new Mock<ICatService>();
@@ -24,7 +24,7 @@ namespace IonaAPI.Core.Test
         }
 
         [Fact]
-        public async Task ReturnImageFromDogApiIfItHasContainImage()
+        public async Task Return_Image_From_DogApi_If_CatAPI_Dont_Have_The_Image()
         {
 
             var catService = new Mock<ICatService>();

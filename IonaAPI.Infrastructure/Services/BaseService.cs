@@ -3,11 +3,10 @@ using IonaAPI.Core.Models;
 using IonaAPI.Infrastructure.Services.Extensions;
 using IonaAPI.Infrastructure.Services.Result;
 using IonaAPI.Services;
-using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Web.Http;
 using IonaAPI.Core.Common;
 using IonaAPI.Core.ApiResult;
+using System.Web.Http;
 
 namespace IonaAPI.Infrastructure
 {
@@ -21,7 +20,7 @@ namespace IonaAPI.Infrastructure
 
         public virtual async Task<PageListCountResult<Breed>> GetBreedsAsync(int page = 0, int limit = 0)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/images/search?page={page}&limit={limit}&order=Asc");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"/v1/breeds?page={page}&limit={limit}&order=Asc");
             var response = await Client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
             var list = new PageListCountResult<Breed>(page, limit);
            

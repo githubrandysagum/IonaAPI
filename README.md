@@ -30,14 +30,12 @@ Example
 Get: /api/v1/Breeds/abys?page=0,limit=10
 Returns lists of images by breed.
 
-#### /api/v1/Images
-#### Or /api/v1/list
+#### /api/v1/Images or /api/v1/list
 Example
 Get: /api/v1/Breeds?page=0,limit=10
 Returns list of images.
 
-#### /api/v1/Images/id
-#### Or /api/v1/ Image/id
+#### /api/v1/Images/id or /api/v1/Image/id
 Example
 Get: /api/v1/Image/xyz
 Returns the image by Id.

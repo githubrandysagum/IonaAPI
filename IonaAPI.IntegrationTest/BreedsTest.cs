@@ -71,5 +71,56 @@ namespace IonaAPI.IntegrationTest
             Assert.Equal(20, catResult.Count());
             Assert.Equal(60, dogResult.Count());
         }
+
+        [Fact]
+        public async Task Should_Return_Complete_Page_When_Exceed_Cat_Page()
+        {
+            var appService = new AppService(new CatServiceMock(), new DogServiceMock());
+            var serviceResult = await appService.GetBreedsAsync(2, 60);
+
+            var cats = serviceResult.Results.Where(b => b.Id.Contains("Cat"));
+            var dogs = serviceResult.Results.Where(b => b.Id.Contains("Dog")).ToList();
+
+            Assert.Equal(0, cats?.Count());
+            Assert.Equal(60, dogs.Count());
+
+
+            var response = await client.GetAsync(CreateBreedsRoute(2, 60));
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<PageListResult<BreedDto>>(content);
+
+            var catResult = results?.Results.Where(b => b.Id.Contains("Cat"));
+            var dogResult = results?.Results.Where(b => b.Id.Contains("Dog"));
+
+
+            Assert.Equal(0, catResult?.Count());
+            Assert.Equal(60, dogResult.Count());
+        }
+
+        [Fact]
+        public async Task Should_Return_Emty_When_There_Is_No_More_Page()
+        {
+            var appService = new AppService(new CatServiceMock(), new DogServiceMock());
+            var serviceResult = await appService.GetBreedsAsync(2, 100);
+
+          
+            Assert.Empty(serviceResult.Results);
+
+
+            var response = await client.GetAsync(CreateBreedsRoute(2, 100));
+            var content = await response.Content.ReadAsStringAsync();
+            var results = JsonConvert.DeserializeObject<PageListResult<BreedDto>>(content);
+
+           
+
+            Assert.Empty(results?.Results);
+        }
+
+        [Fact]
+        public async Task Should_Return_Success200_When_There_Is_No_More_Page()
+        {
+            var response = await client.GetAsync(CreateBreedsRoute(2, 100));
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
     }
 }

@@ -77,8 +77,8 @@ namespace IonaAPI.Services
             {
                 var toSkip = catList.PageCount == 0? 0 : (catList.PageCount % limit);
                 var catPageCount = (catList.PageCount / limit);
-                var toGetPageFromDog = page == 0? page : (page - catPageCount) -1;
-
+                var toGetPageFromDog = page == 0? page : (page - catPageCount);
+                toGetPageFromDog = toSkip == 0 ? toGetPageFromDog : toGetPageFromDog - 1;
                 //Add First part of dog data
                 list.AddRangeSkip(await dogQuery.ExecuteAsync(toGetPageFromDog, limit), toSkip);
 

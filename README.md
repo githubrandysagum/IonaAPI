@@ -8,10 +8,18 @@ https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 ### Set secrets.
 #### Commands:
 …> cd IonaAPI.API
-dotnet user-secrets set "CatApiSettings:Url" "your-CatApi-Url"
-dotnet user-secrets set "CatApiSettings:ApiKey" "your-CatAPI-key"
-dotnet user-secrets set "DogApiSettings:Url" "your-DogApi-Url"
-dotnet user-secrets set "DogApiSettings:ApiKey" "your-DogAPI-key"
+
+
+***dotnet user-secrets set "CatApiSettings:Url" "your-CatApi-Url"
+
+
+***dotnet user-secrets set "CatApiSettings:ApiKey" "your-CatAPI-key"
+
+
+***dotnet user-secrets set "DogApiSettings:Url" "your-DogApi-Url"
+
+
+***dotnet user-secrets set "DogApiSettings:ApiKey" "your-DogAPI-key"
 
 
 ### Run IntegrationTest

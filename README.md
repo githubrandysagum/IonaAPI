@@ -5,6 +5,11 @@ A combined API of thecatapi.com and the thedogapi.com
 Download and Install Dotnet sdk
 https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
+### Run IntegrationTest
+#### Commands:
+…> cd IonaAPI.IntegrationTest
+…> dotnet test
+
 ### Run UnitTest
 #### Commands:
 …> cd IonaAPI.UnitTest

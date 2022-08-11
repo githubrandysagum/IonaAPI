@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IonaAPI.Core.Test", "IonaAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTest", "IntegrationTest", "{82D97F7E-29F5-4F63-ABCA-F4F7FA9AB319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IonaAPI.IntegrationTest", "IonaAPI.IntegrationTest\IonaAPI.IntegrationTest.csproj", "{2A450D73-6C3A-4335-B898-7DB530627BA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IonaAPI.IntegrationTest", "IonaAPI.IntegrationTest\IonaAPI.IntegrationTest.csproj", "{2A450D73-6C3A-4335-B898-7DB530627BA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

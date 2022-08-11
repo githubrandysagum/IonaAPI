@@ -37,8 +37,8 @@ namespace IonaAPI.Infrastructure
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             }).AddHttpMessageHandler<RetriesDeligatingHandler>();
 
-            services.AddScoped<ICatService, CatService>();
-            services.AddScoped<IDogService, DogService>();
+            services.AddSingleton<ICatService, CatService>();
+            services.AddSingleton<IDogService, DogService>();
             return services;
         }
     }

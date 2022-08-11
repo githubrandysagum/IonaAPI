@@ -17,7 +17,9 @@ namespace IonaAPI.Core.ApiResult
         public PageListCountResult(int page, int limit)
         {
             Page = page;
-            Limit = limit;  
+            Limit = limit; 
+            PageCount = 0;
+            Results = new List<T>();
         }
 
         public PageListCountResult(int page, int limit, List<T> breeds) 

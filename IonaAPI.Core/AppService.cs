@@ -60,7 +60,8 @@ namespace IonaAPI.Services
             var list = new PageListResult<T>(page, limit);
 
             var catList = await catQuery.ExecuteAsync(page, limit);
-            list.AddRange(catList);
+            
+             list.AddRange(catList);
             //If Cat list has not enough data for the page. Add dog data
 
             if (catList.ResultCount < limit && catList.ResultCount > 0)
@@ -74,17 +75,17 @@ namespace IonaAPI.Services
             //If Cat list could not provide data for the page. Add dog data
             if (catList.ResultCount == 0)
             {
-                var toSkip = catList.PageCount == 0? 0 : limit - (catList.PageCount % limit);
-                var toSkipPage = (catList.PageCount / limit);
-                var toGetPage = page == 0? page : (page - toSkipPage) - 1;
+                var toSkip = catList.PageCount == 0? 0 : (catList.PageCount % limit);
+                var catPageCount = (catList.PageCount / limit);
+                var toGetPageFromDog = page == 0? page : (page - catPageCount) -1;
 
                 //Add First part of dog data
-                list.AddRangeSkip(await dogQuery.ExecuteAsync(toGetPage, limit), toSkip);
+                list.AddRangeSkip(await dogQuery.ExecuteAsync(toGetPageFromDog, limit), toSkip);
 
-                if (toSkipPage > 0)
+                if (toSkip > 0)
                 {
                     //Add Second part of dog data
-                    list.AddRangeTake(await dogQuery.ExecuteAsync(toGetPage + 1, limit), toSkip);
+                    list.AddRangeTake(await dogQuery.ExecuteAsync(toGetPageFromDog + 1, limit), toSkip);
                 }
             }
             return list;

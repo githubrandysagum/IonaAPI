@@ -41,6 +41,7 @@ namespace IonaAPI.Core.Test
 
             var catService = new Mock<ICatService>();
             var dogService = new Mock<IDogService>();
+
             catService.Setup(p =>  p.GetBreedsAsync(0,10)).Returns(Task.FromResult(pageList));
             dogService.Setup(p => p.GetBreedsAsync(0, 10)).Returns(Task.FromResult(new PageListCountResult<Breed>()));
 

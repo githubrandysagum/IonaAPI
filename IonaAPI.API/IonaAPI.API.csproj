@@ -17,4 +17,7 @@
     <ProjectReference Include="..\IonaAPI.Core\IonaAPI.Core.csproj" />
     <ProjectReference Include="..\IonaAPI.Infrastructure\IonaAPI.Infrastructure.csproj" />
   </ItemGroup>
+  <ItemGroup>
+     <InternalsVisibleTo Include="IonaAPI.IntegrationTest" />
+</ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ namespace IonaAPI.Core.Services.Queries
             this.dogService = dogService;
         }
 
-        public Task<PageListCountResult<Images>> ExecuteAsync(int page = 0, int limit = 10)
+        public async Task<PageListCountResult<Images>> ExecuteAsync(int page = 0, int limit = 10)
         {
             if (page < 0)
             {
@@ -30,7 +30,15 @@ namespace IonaAPI.Core.Services.Queries
             {
                 throw new ArgumentOutOfRangeException(nameof(limit));
             }
-            return dogService.GetImagesAsync(page, limit);  
+
+            var result = await dogService.GetImagesAsync(page, limit);
+
+            if (result == null)
+            {
+                return new PageListCountResult<Images>(page, limit);
+            }
+
+            return result;
         }
     }
 }

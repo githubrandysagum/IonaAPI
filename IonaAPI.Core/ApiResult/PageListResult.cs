@@ -8,6 +8,10 @@ namespace IonaAPI.Core.ApiResult
 {
     public class PageListResult<T>
     {
+        public PageListResult()
+        {
+            Results = new List<T>();
+        }
         public PageListResult(int page, int limit)
         {
             Page = page;
@@ -29,22 +33,34 @@ namespace IonaAPI.Core.ApiResult
 
         public void AddRange(PageListResult<T> ranges)
         {
-            Results.AddRange(ranges.Results);
+            if(ranges != null)
+            {
+                Results.AddRange(ranges.Results);
+            }
         }
 
         public void AddRange(PageListCountResult<T> ranges)
         {
-            Results.AddRange(ranges.Results);
+            if (ranges != null)
+            {
+                Results.AddRange(ranges.Results);
+            }
         }
 
         public void AddRangeTake(PageListCountResult<T> ranges, int take)
         {
-            Results.AddRange(ranges.Results.Take(take));
+            if (ranges != null)
+            {
+                Results.AddRange(ranges.Results.Take(take));
+            }
         }
 
         public void AddRangeSkip(PageListCountResult<T> ranges, int skip)
         {
-            Results.AddRange(ranges.Results.Skip(skip));
+            if (ranges != null)
+            {
+                Results.AddRange(ranges.Results.Skip(skip));
+            }
         }
     }
 }

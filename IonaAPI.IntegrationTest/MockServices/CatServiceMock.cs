@@ -40,7 +40,7 @@ namespace IonaAPI.IntegrationTest.MockServices
 
                 images.Add(new Images
                 {
-                    Id = $"{NAME}BreedImage{id}",
+                    Id = $"{NAME}Images{id}",
                     Url = $"integrationtest.com/{NAME}Image{id}.jpg"
                 });
 
@@ -54,7 +54,19 @@ namespace IonaAPI.IntegrationTest.MockServices
 
                 singleImages.Add(new Image
                 {
-                    Id = $"{NAME}BreedImage{id}",
+                    Id = $"{NAME}Image{id}",
+                    Width = 15 + id,
+                    Height = 10 + id,
+                    Url = $"integrationtest.com/{NAME}Image{id}.jpg"
+                });
+            }
+
+            for(var i = 0; i < 10; i++)
+            {
+                var id = i + 1;
+                breedImages.Add(new BreedImages
+                {
+                    Id = $"xyz",
                     Width = 15 + id,
                     Height = 10 + id,
                     Url = $"integrationtest.com/{NAME}Image{id}.jpg"
@@ -96,7 +108,7 @@ namespace IonaAPI.IntegrationTest.MockServices
 
         public async Task<PageListCountResult<BreedImages>> GetImagesByBreedIdAsync(string breedId, int page = 0, int limit = 10)
         {
-            var list = breedImages.OrderBy(i => i.Id).Skip(page * limit).Take(limit).ToList();
+            var list = breedImages.Where(i=> i.Id == breedId).OrderBy(i => i.Id).Skip(page * limit).Take(limit).ToList();
 
             return await Task.FromResult(new PageListCountResult<BreedImages>
             {

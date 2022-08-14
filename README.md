@@ -69,7 +69,7 @@ Get: /api/v1/Breeds/abys?page=0,limit=10.
 
 #### /api/v1/Images or /api/v1/list
 Example
-Get: /api/v1/Breeds?page=0,limit=10.
+Get: /api/v1/Images?page=0,limit=10.
 
 
 **Returns:** List of images.**
@@ -80,7 +80,7 @@ Get: /api/v1/Breeds?page=0,limit=10.
 
 #### /api/v1/Images/id or /api/v1/Image/id
 Example
-Get: /api/v1/Image/xyz
+Get: /api/v1/Images/xyz
 
 
 **Returns**: The image by Id.

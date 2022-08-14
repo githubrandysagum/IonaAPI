@@ -5,6 +5,8 @@ A combined API of thecatapi.com and the thedogapi.com
 Download and Install Dotnet sdk
 https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 
+## Note: Make sure to set the secrets or you get Internal Server Error!.
+
 ### Set secrets.
 #### Commands:
 …> cd IonaAPI.API
